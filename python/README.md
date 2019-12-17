@@ -1,3 +1,6 @@
+## 用法
+
+```
 FROM registry.cn-hangzhou.aliyuncs.com/last911/openresty-python3.7 AS build-env
 
 ADD . /app
@@ -11,3 +14,4 @@ COPY --from=build-env /usr/local/lib/python3.5/dist-packages /usr/local/lib/pyth
 COPY --from=build-env /app /app
 WORKDIR /app
 CMD ["hello.py"]
+```

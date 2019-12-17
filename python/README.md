@@ -9,7 +9,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip3.5 install -r ./requirements.txt
 COPY ./hello.py /app/hello.py
 
-FROM try520/distroless_python3.5:latest
+FROM try520/thin_python3.5:latest
 COPY --from=build-env /usr/local/lib/python3.5/dist-packages /usr/local/lib/python3.5/dist-packages
 COPY --from=build-env /app /app
 WORKDIR /app

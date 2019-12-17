@@ -8,7 +8,7 @@ COPY ./hello.py /app/hello.py
 # CMD ["python3.5", "hello.py"]
 
 # FROM base_test:v1 as build-env
-FROM registry.cn-hangzhou.aliyuncs.com/try520/distroless_python3:0.0.1
+FROM registry.cn-hangzhou.aliyuncs.com/try520/thin_python3.5:0.0.1
 COPY --from=build-env /usr/local/lib/python3.5/dist-packages /usr/local/lib/python3.5/dist-packages
 COPY --from=build-env /app /app
 WORKDIR /app
